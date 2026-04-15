@@ -1,0 +1,122 @@
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-2xl) var(--space-lg);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.top {
+    text-align: center;
+}
+
+.imageWrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 0 auto var(--space-md);
+    border: 3px solid var(--color-accent);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+}
+.role {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+}
+.tagline {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-lg) 0;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.info li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.8rem;
+}
+
+.label {
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.info a {
+    color: var(--color-accent);
+    transition: color var(--transition);
+}
+.info a:hover {
+    color: var(--color-accent-hover);
+}
+
+.socials {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: auto;
+    padding-top: var(--space-lg);
+}
+
+.socialLink {
+    color: var(--color-text-secondary);
+    transition:
+        color var(--transition),
+        transform var(--transition);
+    display: flex;
+    align-items: center;
+}
+.socialLink:hover {
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: var(--space-md) var(--space-lg);
+        gap: var(--space-md);
+    }
+    .divider {
+        display: none;
+    }
+}

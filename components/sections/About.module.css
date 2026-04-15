@@ -1,0 +1,249 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 1rem 0 2rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+}
+
+.eyebrow {
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+.title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.em {
+    font-style: italic;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* ── Split layout ── */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lead {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.body {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    line-height: 1.85;
+}
+
+.mark {
+    background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(108, 99, 255, 0.4);
+    padding: 0 2px;
+}
+
+/* ── Stat Strip ── */
+.statStrip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.statCard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    cursor: default;
+}
+
+.statCard:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.statIcon {
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.statSub {
+    font-family: "Courier New", monospace;
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ── Block shared ── */
+.blockEyebrow {
+    display: block;
+    font-family: "Courier New", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ── What I Do ── */
+.whatBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.whatGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-border);
+}
+
+.whatCard {
+    background: var(--color-surface);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: relative;
+    transition: background 0.2s ease;
+    overflow: hidden;
+}
+
+.whatCard:hover {
+    background: var(--color-surface-2);
+}
+
+.whatCard:hover .whatLine {
+    width: 100%;
+}
+
+.whatIcon {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.whatTitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.whatDesc {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+}
+
+.whatLine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+/* ── Key Strengths ── */
+.strengthBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+}
+
+.badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+    cursor: default;
+}
+
+.badge:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(108, 99, 255, 0.06);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .statStrip {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .whatGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statStrip {
+        grid-template-columns: 1fr;
+    }
+}
