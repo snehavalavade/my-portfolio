@@ -7,7 +7,7 @@ export const education = [
         grade: "CGPA: 9.31",
     },
     {
-        degree: "",
+        degree: "Higher Secondary Education",
         field: "Science",
         institution: "KLE's MP PU College, Raibag",
         duration: "June 2019 – April 2021",
