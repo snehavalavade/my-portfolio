@@ -242,7 +242,6 @@ export default function Skills() {
                 {skillGroups.map((group) => (
                     <div key={group.label} className={styles.group}>
                         <span className={styles.groupLabel}>{group.label}</span>
-                        {/* scrollable row — only THIS element scrolls, not the page */}
                         <div className={styles.trackOuter}>
                             <div className={styles.track}>
                                 {group.items.map((skill) => (
