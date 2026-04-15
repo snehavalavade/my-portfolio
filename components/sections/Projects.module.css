@@ -1,112 +1,244 @@
 .section {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    gap: 2.5rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.eyebrow {
+    font-family: "Courier New", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+.title {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
+    border-radius: 16px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
     transition:
-        border-color var(--transition),
-        transform var(--transition);
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
+
 .card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    border-color: rgba(108, 99, 255, 0.4);
 }
 
-.cardTop {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-}
-.title {
-    font-size: 1rem;
-    color: var(--color-text-primary);
-}
-.subtitle {
-    font-size: 0.8rem;
-    color: var(--color-accent);
-}
-.desc {
-    font-size: 0.85rem;
-    line-height: 1.7;
-}
-
-.points {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-}
-.point {
-    font-size: 0.82rem;
-    color: var(--color-text-secondary);
-    padding-left: var(--space-md);
+.preview {
     position: relative;
-    line-height: 1.7;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: height 0.25s ease;
 }
-.point::before {
+
+.card:hover .preview {
+    height: 150px;
+}
+
+.previewLabel {
+    font-family: "Courier New", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid;
+    padding: 5px 14px;
+    border-radius: 999px;
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cardTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.cardSubtitle {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin: 0;
+    font-family: "Courier New", monospace;
+}
+
+.desc {
+    font-size: 0.84rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+}
+
+.bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bullet {
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.bullet::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 9px;
+    top: 8px;
     width: 4px;
     height: 4px;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     background: var(--color-accent);
+    flex-shrink: 0;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm);
+    gap: 0.4rem;
     margin-top: auto;
 }
+
 .tag {
-    font-size: 0.72rem;
-    background: rgba(108, 99, 255, 0.12);
+    font-size: 0.68rem;
+    font-weight: 600;
+    font-family: "Courier New", monospace;
+    letter-spacing: 0.04em;
     color: var(--color-accent);
+    background: rgba(108, 99, 255, 0.1);
+    border: 1px solid rgba(108, 99, 255, 0.22);
+    border-radius: 999px;
     padding: 3px 10px;
-    border-radius: var(--radius-full);
-    border: 1px solid rgba(108, 99, 255, 0.2);
-    font-weight: 500;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
-.links {
+.tag:hover {
+    background: rgba(108, 99, 255, 0.2);
+    border-color: rgba(108, 99, 255, 0.45);
+}
+
+.actions {
     display: flex;
-    gap: var(--space-sm);
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.25rem;
 }
-.linkBtn {
-    font-size: 0.8rem;
+
+.btnOutline,
+.btnFill,
+.btnDisabled {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 5px 16px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
+    padding: 6px 16px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.btnOutline {
     color: var(--color-text-secondary);
-    transition: all var(--transition);
+    border: 1px solid var(--color-border);
+    background: transparent;
 }
-.linkBtn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+
+.btnOutline:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-text-secondary);
 }
-.live {
+
+.btnFill {
+    color: #fff;
     background: var(--color-accent);
-    color: #fff;
-    border-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
 }
-.live:hover {
-    background: var(--color-accent-hover);
-    color: #fff;
+
+.btnFill:hover {
+    background: var(--color-accent-hover, #857dff);
+    border-color: var(--color-accent-hover, #857dff);
+}
+
+.btnDisabled {
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    cursor: default;
+    opacity: 0.5;
+    font-size: 0.72rem;
+}
+
+@media (max-width: 680px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }

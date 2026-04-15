@@ -230,7 +230,7 @@ export default function Skills() {
     return (
         <section id="skills" className={styles.section}>
             <div className={styles.header}>
-                <span className={styles.eyebrow}>03 / Skills</span>
+                <span className={styles.eyebrow}>04 / Skills</span>
                 <h2 className={styles.title}>Tech Stack</h2>
                 <p className={styles.subtitle}>
                     Technologies I work with daily to ship fast, scalable web
