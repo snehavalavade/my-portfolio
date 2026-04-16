@@ -7,7 +7,7 @@ export const personal = {
     location: "Bangalore, Karnataka",
     socials: {
         linkedin: "https://linkedin.com/in/sneha-valavade",
-        github: "https://github.com/sneha-valavade",
+        github: "https://github.com/snehavalavade/",
     },
     resumePdf: "/Sneha-Valavade-Resume.pdf",
     profileImage: "/Profilepic.jpg",

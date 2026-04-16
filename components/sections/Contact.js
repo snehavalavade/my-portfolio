@@ -84,7 +84,7 @@ export default function Contact() {
                 </div>
 
                 <a
-                    href={`mailto:${personal?.email ?? "snehavalavade8@gmail.com"}`}
+                    href={`https://mail.google.com/mail/?view=cm&to=${personal?.email}`}
                     className={styles.primaryBtn}
                 >
                     Say Hello
